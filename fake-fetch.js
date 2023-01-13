@@ -2,7 +2,8 @@
 // IT IS NOT IMPORTANT!!!!
 export default function fakeFetch(url) {
   const time = Math.floor(Math.random() * 1800 + 200);
-  return new Promise((resolve, reject) =>
+
+  return new Promise((resolve) => {
     setTimeout(
       () =>
         resolve({
@@ -11,6 +12,6 @@ export default function fakeFetch(url) {
           time: `${time} ms`,
         }),
       time,
-    ),
-  );
+    );
+  });
 }

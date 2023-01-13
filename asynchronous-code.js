@@ -3,20 +3,20 @@ import fakeFetch from './fake-fetch.js';
 let joinString; // undefined
 
 // case 1 example is faster than youtube
-//    1. joinString = example ===> is this really happening??
+//    1. joinString = example
 //    2. youtube checks and goes to defined case
 //    3. updates joinString to  example + youtube
 //    4 print it
 
 // case 2 youtube is faster than example
-//    1. joinString = youtube  ===> is this really happening??
+//    1. joinString = youtube
 //    2. example checks and go to defined case
 //    3. updates joinString to youtube + example
 //    4. print it
 
 fakeFetch('https://youtube.com')
   .then((response) => {
-    // if youtube is after exampple
+    // if youtube is after example
 
     if (joinString !== undefined /* if joinString is defined*/) {
       // joinString = example
@@ -38,6 +38,7 @@ fakeFetch('https://example.com')
       joinString += response.html; // youtube + example
       console.log(joinString);
     } else {
+      /* if joinString is not defined*/
       joinString = response.html;
     }
   })
